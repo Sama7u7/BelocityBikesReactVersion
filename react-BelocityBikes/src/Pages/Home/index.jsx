@@ -1,13 +1,9 @@
-
 function Home() {
- 
   return (
-   
-      <div className='bg-fuchsia-950'>
-       <h1> Home</h1>
-      </div>
-     
-  )
+    <div className="bg-green-400">
+      <h1> Home</h1>
+    </div>
+  );
 }
 
-export default Home
+export default Home;

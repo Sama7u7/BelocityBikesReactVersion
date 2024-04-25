@@ -1,29 +1,35 @@
-import Home from '../Home'
-import Micuenta from '../MyAccount'
-import Orden from '../MiOrden'
-import MisOrdenes from '../MisOrdenes'
-import Not404 from '../NotFound404'
-import SignIn from '../SignIn'
-import Cuenta from '../MyAccount'
+import { useRoutes, BrowserRouter } from "react-router-dom";
 
+import Home from "../Home";
+import Micuenta from "../MyAccount";
+import Orden from "../MiOrden";
+import MisOrdenes from "../MisOrdenes";
+import Not404 from "../NotFound404";
+import SignIn from "../SignIn";
+import NavBar from "../../Components/NavBar";
 
-import './App.css'
+import "./App.css";
 
-function App() {
- 
+const AppRoutes = () => {
+  let routes = useRoutes([
+    { path: "/", element: <Home /> },
+    { path: "/mis-ordenes", element: <MisOrdenes /> },
+    { path: "/mi-orden", element: <Orden /> },
+    { path: "/cuenta", element: <Micuenta /> },
+    { path: "/inicio-sesion", element: <SignIn /> },
+    { path: "/Not-Found", element: <Not404 /> },
+  ]);
+
+  return routes;
+};
+
+const App = () => {
   return (
-   
-      <div className='bg-fuchsia-950'>
-       <Home/>
-       <Cuenta/>
-       <Orden/>
-       <MisOrdenes/>
-       <Not404/>
-       <SignIn/>
-       <Cuenta/>
-      </div>
-     
-  )
-}
+    <BrowserRouter>
+      <AppRoutes />
+      <NavBar />
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
