@@ -1,9 +1,14 @@
+import React from "react";
+import Layout from "../../Components/Layout"
+import Card from "../../Components/Card";
+
 function Home() {
   return (
-    <div className="bg-green-400">
-      <h1> Home</h1>
-    </div>
-  );
+    <Layout>
+       Home
+       <Card></Card>
+    </Layout>
+  )
 }
 
-export default Home;
+export default Home
