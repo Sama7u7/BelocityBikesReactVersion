@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { CarritoContext } from "../../Context";
 
 const Navbar = () => {
+  const context = useContext(CarritoContext);
   const activityStyle = {
     textDecoration: "underline",
     textDecorationOffset: "8px",
@@ -80,7 +83,7 @@ const Navbar = () => {
             Iniciar sesion
           </NavLink>
         </li>
-        <li>Cart 0</li>
+        <li>Cart {context.count}</li>
       </ul>
     </nav>
   );
