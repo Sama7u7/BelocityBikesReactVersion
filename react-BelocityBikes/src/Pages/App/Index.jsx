@@ -1,4 +1,5 @@
 import { useRoutes, BrowserRouter } from "react-router-dom";
+import { CarritoProvider } from "../../Context";
 
 import Home from "../Home";
 import Micuenta from "../MyAccount";
@@ -25,10 +26,12 @@ const AppRoutes = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <AppRoutes />
-      <NavBar />
-    </BrowserRouter>
+    <CarritoProvider>
+      <BrowserRouter>
+        <AppRoutes />
+        <NavBar />
+      </BrowserRouter>
+    </CarritoProvider>
   );
 };
 
