@@ -5,8 +5,13 @@ import { PlusIcon } from "@heroicons/react/24/solid";
 const Card = (data) => {
   const context = useContext(CarritoContext);
 
+  const showProduct = (productDetail) =>{
+    context.openProductDetail()
+    context.setProductoAMostrar(productDetail)
+  }
+
   return (
-    <div className="bg-white cursor-pointer w-56 h-68" onClick={() => context.openProductDetail()}>
+    <div className="bg-white cursor-pointer w-56 h-68" onClick={() => showProduct(data.data)}>
       <figure className="relative mb-2 w-full h-4/5">
         <span className="absolute bottom-0 left-0 rounded-sm bg-neutral-100 text-black text-xs ">
           {data.data.category}
