@@ -47,14 +47,6 @@ const Navbar = () => {
             Joyeria
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/accesories"
-            style={({ isActive }) => (isActive ? activityStyle : undefined)}
-          >
-            Accesorios
-          </NavLink>
-        </li>
       </ul>
       <ul className="flex items-center gap-3">
         <li>
@@ -84,7 +76,11 @@ const Navbar = () => {
             Iniciar sesion
           </NavLink>
         </li>
-        <li className="flex"> <ShoppingBagIcon className='h-6 w-6 text-black'></ShoppingBagIcon>{context.count}</li>
+        <li className="flex">
+          {" "}
+          <ShoppingBagIcon className="h-6 w-6 text-black"></ShoppingBagIcon>
+          {context.count}
+        </li>
       </ul>
     </nav>
   );
