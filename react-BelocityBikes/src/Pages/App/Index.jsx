@@ -8,6 +8,7 @@ import MisOrdenes from "../MisOrdenes";
 import Not404 from "../NotFound404";
 import SignIn from "../SignIn";
 import NavBar from "../../Components/NavBar";
+import CheckOutMenu from "../../Components/CheckOutSideMenu";
 
 import "./App.css";
 
@@ -30,6 +31,7 @@ const App = () => {
       <BrowserRouter>
         <AppRoutes />
         <NavBar />
+        <CheckOutMenu />
       </BrowserRouter>
     </CarritoProvider>
   );
