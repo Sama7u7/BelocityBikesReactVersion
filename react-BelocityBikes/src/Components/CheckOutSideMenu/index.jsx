@@ -7,6 +7,12 @@ import OrderCard from "../../Components/OrderCard";
 const CheckOutMenu = () => {
   const context = useContext(CarritoContext);
   console.log("product toshow: ", context.productoAMostrar);
+const handleDelete = (id) => {
+  const filteredProducts = context.carritoProductos.filter(product => product.id != id)
+  context.setCarritoProductos(filteredProducts)
+}
+
+
   return (
     <aside
       className={`${
@@ -23,9 +29,11 @@ const CheckOutMenu = () => {
         {context.carritoProductos.map((product) => (
           <OrderCard
             key={product.id}
+            id={product.id}
             title={product.title}
             imgURL={product.image}
             price={product.price}
+            handleDelete={handleDelete}
           />
         ))}
       </div>
